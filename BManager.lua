@@ -2,8 +2,37 @@ util.require_no_lag("natives-1627063482")
 handle_ptr = memory.alloc(13*8)
 
 util.toast("BManager edits by XxRagulxX#9490, By King")
+localVer = 1.4
+local response = false
+
 
 -- Stats functions 
+async_http.init("raw.githubusercontent.com", "/XxRagulxX/Business-manager/main/version.lua", function(output)
+    currentVer = tonumber(output)
+    response = true
+    if localVer ~= currentVer then
+        util.toast("Business Manager version is available, update the lua to get the newest version.")
+        menu.action(menu.my_root(), "Update Lua", {}, "", function()
+            async_http.init('raw.githubusercontent.com','/XxRagulxX/Business-manager/main/BManager.lua',function(a)
+                local err = select(2,load(a))
+                if err then
+                    util.toast("Script failed to download. Please try again later. If this continues to happen then manually update via github.")
+                return end
+                local f = io.open(filesystem.scripts_dir()..SCRIPT_RELPATH, "wb")
+                f:write(a)
+                f:close()
+                util.toast("Successfully updated Business Manager, please restart the script :)")
+                util.stop_script()
+            end)
+            async_http.dispatch()
+        end)
+    end
+end, function() response = true end)
+async_http.dispatch()
+repeat 
+    util.yield()
+until response
+
 function MP_INDEX()
     return "MP" .. util.get_char_slot() .. "_"
 end
