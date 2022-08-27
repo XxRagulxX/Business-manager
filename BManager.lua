@@ -2,7 +2,7 @@ util.require_no_lag("natives-1627063482")
 handle_ptr = memory.alloc(13*8)
 
 util.toast("BManager edits by XxRagulxX#9490, By King")
-localVer = 1.4
+localVer = 1.5
 local response = false
 
 
