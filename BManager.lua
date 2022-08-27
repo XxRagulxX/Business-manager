@@ -2,7 +2,7 @@ util.require_no_lag("natives-1627063482")
 handle_ptr = memory.alloc(13*8)
 
 util.toast("BManager edits by XxRagulxX#9490, By King")
-localVer = 1.5
+localVer = 1.6
 local response = false
 
 
@@ -520,19 +520,19 @@ end)
 menu.toggle(menu.my_root(), "Underlay", {"bm_underlay"}, "Shows an underlay under the text. Makes clear to view", function(on)
     bm_underlay = on
 end, false)
-menu.toggle_loop(menu.my_root(),"MC Business Resupply Discount", {"hcremcostresupmc"},"Make sure use this before accessing the laptop!", function()
-    SET_INT_GLOBAL(262145 + 18998, 1000) -- joaat("BIKER_PURCHASE_SUPPLIES_COST_PER_SEGMENT")
+menu.toggle_loop(menu.my_root(),"MC Business Resupply Discount", {},"Make sure use this before accessing the laptop!", function()
+    SET_INT_GLOBAL(262145 + 18998, 1000) 
 end, function()
     SET_INT_GLOBAL(262145 + 18998, 15000)
 end)
-menu.toggle_loop(menu.my_root(),"Bunker Resupply Discount", {"hcremcostresupbunker"},"Make sure use this before accessing the laptop!", function()
-    SET_INT_GLOBAL(262145 + 21599, 1000) -- 970448219
-    SET_INT_GLOBAL(262145 + 21600, 1000) -- 262971166
+menu.toggle_loop(menu.my_root(),"Bunker Resupply Discount", {},"Make sure use this before accessing the laptop!", function()
+    SET_INT_GLOBAL(262145 + 21599, 1000) 
+    SET_INT_GLOBAL(262145 + 21600, 1000) 
 end, function()
     SET_INT_GLOBAL(262145 + 21599, 15000)
     SET_INT_GLOBAL(262145 + 21600, 15000)
 end)
-menu.toggle_loop(menu.my_root(),"Single MC Vehicle Sell", {"hcsinglemcveh"},"Makes always number of MC business selling's vehicle is one.", function() -- Credit goes to https://github.com/Tgamer500/YiffWarePWLua/blob/main/YiffWarePW.lua
+menu.toggle_loop(menu.my_root(),"Single MC Vehicle Sell", {},"Makes always number of MC business selling's vehicle is one.", function()
     if GET_INT_LOCAL("gb_biker_contraband_sell", 696 + 17) ~= 0 then
         SET_INT_LOCAL("gb_biker_contraband_sell", 696 + 17, 0)
     end
