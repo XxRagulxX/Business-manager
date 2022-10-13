@@ -2,7 +2,7 @@ util.require_no_lag("natives-1627063482")
 handle_ptr = memory.alloc(13*8)
 
 util.toast("BManager edits by XxRagulxX#9490, By King")
-localVer = 1.6
+localVer = 1.7
 local response = false
 
 
@@ -241,7 +241,7 @@ menu.action(Teleport_place,'Meth',{},"Teleport to Meth",function()
     menu.trigger_commands("tpbusinessmeth")
 end)
 menu.action(Teleport_place,'Bunker',{},"Teleport to Bunker",function()
-    menu.trigger_commands("tpbunker")
+    menu.trigger_commands("tpbunker1")
 end)
 menu.action(Teleport_place,'Nightclub',{},"Teleport to Nightclub",function()
     menu.trigger_commands("tpnightclub")
